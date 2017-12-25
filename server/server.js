@@ -40,7 +40,7 @@ app.use(function (req, res, next) {
 app.use('/api/contact', require('./controllers/api/contact.controller'));
 app.use('/api/pages', require('./controllers/api/pages.controller'));
 app.use('/api/posts', require('./controllers/api/posts.controller'));
-// app.use('/api/images', require('./controllers/api/images.controller'));
+//app.use('/api/images', require('./controllers/api/image.controller'));
 app.use('/api/redirects', require('./controllers/api/redirects.controller'));
 app.use('/api/users', require('./controllers/api/users.controller'));
 

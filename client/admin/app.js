@@ -76,9 +76,9 @@
             })
             .state('images', {
                 url: '/images',
-                templateUrl: 'images/index.view.html',
-                controller: 'Images.controller',
-                controllerAs: 'vm',
+                templateUrl: 'images/index.ejs',
+                //controller: '/Images.controller',
+                // controllerAs: 'vm',
                 data: { activeTab: 'images' }
             })
             .state('account', {
