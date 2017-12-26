@@ -1,0 +1,27 @@
+<div class="images-index">
+    <div class="index-header">
+        <h1>Images</h1>
+        <div class="buttons">
+            <a href="#/images/add" class="btn btn-default">
+                <i class="glyphicon glyphicon-plus"></i> New Images
+            </a>
+        </div>
+    </div>
+    <table class="images-table table table-striped">
+        <tr>
+            <th>File Name</th>
+            <th>Original Path</th>
+            <th>Publish Date</th>
+            <th></th>
+        </tr>
+        <tr ng-repeat="image in vm.images">
+            <td>{{image.title}}</td>
+            <td>{{image.tags | csv}}</td>
+            <td>{{image.publishDate | date:'dd/MM/yyyy'}}</td>
+            <td class="action-icons">
+                <!-- <a href="#/images/edit/{{image._id}}" class="btn btn-default"><i class="glyphicon glyphicon-pencil"></i></a> -->
+                <a class="btn btn-danger" ng-click="vm.deleteImage()" ng-show="vm.image._id">Delete</a>
+            </td>
+        </tr>
+    </table>
+</div>

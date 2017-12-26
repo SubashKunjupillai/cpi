@@ -76,9 +76,16 @@
             })
             .state('images', {
                 url: '/images',
-                templateUrl: 'images/index.ejs',
-                //controller: '/Images.controller',
-                // controllerAs: 'vm',
+                templateUrl: 'images/index.view.html',
+                controller: 'Images.IndexController',
+                controllerAs: 'vm',
+                data: { activeTab: 'images' }
+            })
+            .state('images/add', {
+                url: '/images/add',
+                templateUrl: 'images/add.view.html',
+                controller: 'Images.AddController',
+                controllerAs: 'vm',
                 data: { activeTab: 'images' }
             })
             .state('account', {

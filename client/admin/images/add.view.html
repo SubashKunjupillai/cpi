@@ -1,0 +1,14 @@
+<script src="//unpkg.com/angular/angular.js"></script>
+  <body ng-app="app">
+    <h1>Upload Images</h1>
+    <input type="file" files-input ng-model="vm.images" multiple>
+    <!-- <div ng-if="!vm.images"> -->
+      <h4>Files selected for upload</h4>
+      <div ng-repeat="image in vm.images">
+            <div>{{image.name}}</div>
+      </div>
+      <div class="form-group">
+        <a class="btn btn-primary" ng-click="vm.saveImages()">Upload</a>
+      </div>
+    <!-- </div> -->
+  </body>
