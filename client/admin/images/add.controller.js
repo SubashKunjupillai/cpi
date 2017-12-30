@@ -19,32 +19,31 @@
 
     function Controller($stateParams, $location, ImageService, AlertService) {
         var vm = this;
-
         vm.image = {};
         vm.images = [];
         vm.saveImages = saveImages;
         // vm.deleteImage = deleteImage;
 
-        // initController();
-        //
-        // function initController() {
-        //     vm.loading = 0;
-        //     if ($stateParams._id) {
-        //         vm.loading += 1;
-        //         ImageService.GetById($stateParams._id)
-        //             .then(function (image) {
-        //                 vm.loading -= 1;
-        //                 vm.image = image;
-        //             });
-        //     }
-        //         // initialise with defaults
-        //     // else {
-        //     //     vm.image = {
-        //     //         publishDate: moment().format('YYYY-MM-DD'),
-        //     //         publish: true
-        //     //     };
-        //     // }
-        // }
+        initController();
+
+        function initController() {
+            vm.loading = 0;
+            if ($stateParams._id) {
+                vm.loading += 1;
+                ImageService.GetById($stateParams._id)
+                    .then(function (image) {
+                        vm.loading -= 1;
+                        vm.image = image;
+                    });
+            }
+                // initialise with defaults
+            else {
+                vm.image = {
+                    publishDate: moment().format('YYYY-MM-DD'),
+                    publish: true
+                };
+            }
+        }
 
         function saveImages() {
             ImageService.Save(vm.images)

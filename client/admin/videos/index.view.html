@@ -1,0 +1,28 @@
+﻿<div class="videos-index">
+    <div class="index-header">
+        <h1>Videos</h1>
+        <div class="buttons">
+            <a href="#/videos/add" class="btn btn-default">
+                <i class="glyphicon glyphicon-plus"></i> Add Video
+            </a>
+        </div>
+    </div>
+    <table class="videos-table table table-striped">
+        <tr>
+            <th>Title</th>
+            <th>Tags</th>
+            <th>Publish Date</th>
+            <th class="text-center">Published</th>
+            <th></th>
+        </tr>
+        <tr ng-repeat="video in vm.videos">
+            <td>{{video.title}}</td>
+            <td>{{video.tags | csv}}</td>
+            <td>{{video.publishDate | date:'dd/MM/yyyy'}}</td>
+            <td class="text-center"><i ng-if="video.publish" class="glyphicon glyphicon-ok" /></td>
+            <td class="action-icons">
+                <a href="#/videos/edit/{{video._id}}" class="btn btn-default"><i class="glyphicon glyphicon-pencil"></i></a>
+            </td>
+        </tr>
+    </table>
+</div>

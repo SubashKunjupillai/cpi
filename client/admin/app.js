@@ -88,6 +88,27 @@
                 controllerAs: 'vm',
                 data: { activeTab: 'images' }
             })
+            .state('videos', {
+                url: '/videos',
+                templateUrl: 'videos/index.view.html',
+                controller: 'Videos.IndexController',
+                controllerAs: 'vm',
+                data: { activeTab: 'videos' }
+            })
+            .state('videos/add', {
+                url: '/videos/add',
+                templateUrl: 'videos/add-edit.view.html',
+                controller: 'Videos.AddEditController',
+                controllerAs: 'vm',
+                data: { activeTab: 'videos' }
+            })
+            .state('videos/edit', {
+                url: '/videos/edit/:_id',
+                templateUrl: 'videos/add-edit.view.html',
+                controller: 'Videos.AddEditController',
+                controllerAs: 'vm',
+                data: { activeTab: 'videos' }
+            })
             .state('account', {
                 url: '/account',
                 templateUrl: 'account/index.view.html',

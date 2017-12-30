@@ -3,7 +3,7 @@
     <form ng-if="!vm.loading">
         <div class="form-group">
             <label for="title">Title</label>
-            <input type="text" id="title" class="form-control" ng-model="vm.post.title" />
+            <input type="text" id="title" class="form-control" ng-model="vm.post.title" required/>
         </div>
         <div class="form-group">
             <label for="slug">Slug</label>
@@ -12,15 +12,15 @@
         </div>
         <div class="form-group">
             <label for="summary">Summary</label>
-            <textarea id="summary" class="form-control" ng-model="vm.post.summary" rows="4"></textarea>
+            <textarea id="summary" class="form-control" ng-model="vm.post.summary" rows="4" required></textarea>
         </div>
         <div class="form-group">
             <label for="body">Body</label>
-            <textarea class="form-control" ng-model="vm.post.body" ckeditor="minimal" wysiwyg></textarea>
+            <textarea class="form-control" ng-model="vm.post.body" ckeditor="minimal" wysiwyg required></textarea>
         </div>
         <div class="form-group">
             <label for="title">Tags</label>
-            <input type="text" id="tags" class="form-control" ng-model="vm.post.tags" tags />
+            <input type="text" id="tags" class="form-control" ng-model="vm.post.tags" tags required/>
         </div>
         <div class="form-group">
             <label for="publish-date">Publish Date</label>
