@@ -4,7 +4,7 @@ var mongo = require('mongoskin');
 var db = mongo.db(config.connectionString, { native_parser: true });
 db.bind('images');
 var service = {};
-// service.getImages = getImages;
+service.getAll = getAll;
 // service.getImageById = getImageById;
 service.addImages = addImages;
 service.addImage = addImage;
@@ -31,7 +31,22 @@ module.exports = service;
 //
 //   return deferred.promise;
 // }
+
+function getAll(){
+  var deferred = Q.defer();
+
+  db.images.find().sort({ publishDate: -1 }).toArray(function (err, images) {
+      if (err) deferred.reject(err.name + ': ' + err.message);
+
+      deferred.resolve(images);
+  });
+
+  return deferred.promise;
+}
+
+
 function addImages(images) {
+    console.log("Inside Add Images");
     var deferred = Q.defer();
     for (image in images){
       addImage(image);

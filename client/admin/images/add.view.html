@@ -1,8 +1,7 @@
-<script src="//unpkg.com/angular/angular.js"></script>
+<!-- <script src="//unpkg.com/angular/angular.js"></script>
   <body ng-app="app">
     <h1>Upload Images</h1>
     <input type="file" files-input ng-model="vm.images" multiple>
-    <!-- <div ng-if="!vm.images"> -->
       <h4>Files selected for upload</h4>
       <div ng-repeat="image in vm.images">
             <div>{{image.name}}</div>
@@ -10,5 +9,32 @@
       <div class="form-group">
         <a class="btn btn-primary" ng-click="vm.saveImages()">Upload</a>
       </div>
-    <!-- </div> -->
-  </body>
+  </body> -->
+
+
+<!--  Working Start -->
+  <div class="images-add">
+      <h1>Images</h1>
+      <form ng-if="!vm.loading">
+              <label for="title">Upload Image(s)</label>
+              <input type="file" fileread="vm.images" multiple/>
+          <div class="form-group">
+              <label for="publish-date">Publish Date</label>
+              <div class="input-group">
+                  <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                  <input type="text" id="publish-date" class="form-control" ng-model="vm.images.publishDate" datepicker />
+              </div>
+          </div>
+          <div class="checkbox">
+              <label>
+                  <input type="checkbox" ng-model="vm.images.publish"> Publish
+              </label>
+          </div>
+          <hr />
+          <div class="form-group">
+              <a class="btn btn-primary" ng-click="vm.saveImages()">Save</a>
+              <a class="btn btn-default" href="#/images">Cancel</a>
+          </div>
+
+      </form>
+  </div>

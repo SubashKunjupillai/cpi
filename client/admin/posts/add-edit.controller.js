@@ -34,6 +34,7 @@
         }
 
         function savePost() {
+          console.log(vm.post);
             PostService.Save(vm.post)
                 .then(function () {
                     AlertService.Success('Post saved', true);

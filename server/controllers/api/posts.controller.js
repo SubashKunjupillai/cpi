@@ -56,6 +56,7 @@ function getById(req, res) {
 }
 
 function create(req, res) {
+  console.log(req.body);
     postService.create(req.body)
         .then(function () {
             res.sendStatus(200);
