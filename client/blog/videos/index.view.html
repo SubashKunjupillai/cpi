@@ -1,15 +1,14 @@
 <div class="page-details">
     <div class="container">
         <h1>Videos</h1>
-              <div>
+        <div class="row">
                 <% videos.forEach(function(video) { %>
-                <div>
-                    <p><%= video.publishDateFormatted %></p>
-                    <iframe width="560" height="315" ng-src="<%= video.displayUrl %>"
-                      frameborder="0" allowfullscreen></iframe>
-                    <p><%= video.description %></p>
+                <div class="col-sm-6">
+                  <h4><%= video.title %></h4>
+                    <iframe width="560" height="315" ng-src="<%= video.displayUrl %>" frameborder="0" allowfullscreen></iframe>
+                    <p><%= video.publishDateFormatted %> : <%= video.description %></p>
                 </div>
                 <% }) %>
-              </div>
+          </div>
     </div>
 </div>
