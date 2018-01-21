@@ -55,11 +55,14 @@
                 url: '/archive',
                 templateUrl: '/archive?xhr=1'
             })
+            .state('videos', {
+                url: '/videos',
+                templateUrl: '/videos?xhr=1'
+            })
             .state('contact', {
                 url: '/contact',
                 templateUrl: '/contact?xhr=1',
-                controller: 'Contact.IndexController',
-                controllerAs: 'vm'
+                controller: 'Contact.IndexController'
             })
             .state('contact-thanks', {
                 url: '/contact-thanks',

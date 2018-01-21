@@ -8,13 +8,14 @@ var fs = require('fs');
 var config = require('config.json');
 var pageService = require('services/page.service');
 var postService = require('services/post.service');
+var videoService = require('services/video.service');
 var redirectService = require('services/redirect.service');
 var slugify = require('helpers/slugify');
 var pager = require('helpers/pager');
 
 var basePath = path.resolve('../client/blog');
 var indexPath = basePath + '/index';
-var metaTitleSuffix = " | MEANie - The MEAN Stack Blog";
+var metaTitleSuffix = " | Party Website";
 var oneWeekSeconds = 60 * 60 * 24 * 7;
 var oneWeekMilliseconds = oneWeekSeconds * 1000;
 
@@ -38,7 +39,7 @@ router.use(function (req, res, next) {
             if (redirect) {
                 // 301 redirect to new url
                 return res.redirect(301, redirect.to);
-            } 
+            }
 
             next();
         })
@@ -56,6 +57,31 @@ router.use(function (req, res, next) {
     vm.domain = req.protocol + '://' + req.get('host');
     vm.url = vm.domain + req.path;
     vm.googleAnalyticsAccount = config.googleAnalyticsAccount;
+
+    videoService.getAll()
+        .then(function (videos) {
+            // if admin user is logged in return all posts, otherwise return only published posts
+            vm.videos = vm.loggedIn ? videos : _.filter(videos, { 'publish': true });
+
+            // add urls to videos
+            vm.videos.forEach(function (video) {
+                video.publishDateFormatted = moment(video.publishDate).format('MMMM DD YYYY');
+                var video_id = video.url.split('v=')[1].split('&')[0];
+                video.displayUrl = "https://www.youtube.com/embed/".concat(video_id);
+            });
+
+            // loadYears();
+            // loadTags();
+
+            // next();
+
+            // console.log(vm.videos);
+        })
+        .catch(function (err) {
+            vm.error = err;
+            res.render(indexPath, vm);
+        });
+
 
     postService.getAll()
         .then(function (posts) {
@@ -104,6 +130,8 @@ router.use(function (req, res, next) {
             }
         });
     }
+
+
 
     function loadTags() {
         // get unique array of all tags
@@ -266,6 +294,16 @@ router.get('/archive', function (req, res, next) {
     vm.metaDescription = 'Archive' + metaTitleSuffix;
 
     render('archive/index.view.html', req, res);
+});
+
+router.get('/videos', function (req, res, next) {
+    var vm = req.vm;
+
+    // meta tags
+    vm.metaTitle = 'Videos' + metaTitleSuffix;
+    vm.metaDescription = 'Videos' + metaTitleSuffix;
+
+    render('videos/index.view.html', req, res);
 });
 
 // contact route

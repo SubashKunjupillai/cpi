@@ -28,6 +28,7 @@
                 // initialise with defaults
                 vm.video = {
                     publishDate: moment().format('YYYY-MM-DD'),
+                    displayUrl : "test",
                     publish: true
                 };
             }
