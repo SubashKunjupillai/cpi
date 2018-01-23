@@ -72,7 +72,7 @@ router.use(function (req, res, next) {
 
             // loadYears();
             // loadTags();
-
+            loadVideoYears();
             // next();
 
             // console.log(vm.videos);
@@ -82,6 +82,32 @@ router.use(function (req, res, next) {
             res.render(indexPath, vm);
         });
 
+
+        function loadVideoYears() {
+            vm.videoYears = [];
+
+            // get all publish dates
+            var dates = _.pluck(vm.videos, 'publishDate');
+
+            // loop through dates and create list of unique years and months
+            _.each(dates, function (dateString) {
+                var date = moment(dateString);
+
+                var year = _.findWhere(vm.videoYears, { value: date.format('YYYY') });
+                if (!year) {
+                    year = { value: date.format('YYYY'), months: [] };
+                    vm.videoYears.push(year);
+                }
+
+                var month = _.findWhere(year.months, { value: date.format('MM') });
+                if (!month) {
+                    month = { value: date.format('MM'), name: moment(date).format('MMMM'), postCount: 1 };
+                    year.months.push(month);
+                } else {
+                    month.postCount += 1;
+                }
+            });
+        }
 
     postService.getAll()
         .then(function (posts) {
@@ -130,8 +156,6 @@ router.use(function (req, res, next) {
             }
         });
     }
-
-
 
     function loadTags() {
         // get unique array of all tags
