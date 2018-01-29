@@ -1,25 +1,25 @@
-<link rel='stylesheet' href="imageslider.css">
+
 <div class="page-details">
   <div class="container">
-    <h1>Videos</h1>
-  <div class="row">
-    <!-- <div class="container-fluid"> -->
-      <div class="col-sm-1">
-        <p><b> Years </p>
-        <% videoYears.forEach(function(year) { %>
-          <p><%= year.value %></p>
-        <% }) %>
-      </div>
-      <div class="col-sm-11">
-        <div class="row">
-      <% videos.forEach(function(video) { %>
-        <div class="col-sm-6">
-          <h4><%= video.title %></h4>
-          <iframe width="400" height="250" ng-src="<%= video.displayUrl %>" frameborder="0" allowfullscreen></iframe>
-          <p><%= video.publishDateFormatted %> : <%= video.description %></p>
+    <div class="row">
+      <div class="col-sm-12" style="  border-bottom: 4px solid #EE445F; height:200px;">
+        <div id="wrapper">
+          <div id="image">
+            <div class="image i1"><img src="/_content/imageslider/1.jpg"></div>
+            <div class="image i2"><img src="/_content/imageslider/2.jpg"></div>
+            <div class="image i3"><img src="/_content/imageslider/3.jpg"></div>
+            <div class="image i4"><img src="/_content/imageslider/4.jpg"></div>
+            <div class="image i5"><img src="/_content/imageslider/5.jpg"></div>
+            <div class="image i6"><img src="/_content/imageslider/6.jpg"></div>
+            <div class="image i7"><img src="/_content/imageslider/7.jpg"></div>
+            <div class="image i8"><img src="/_content/imageslider/8.jpg"></div>
+            <div class="image i9"><img src="/_content/imageslider/9.jpg"></div>
+            <div class="image i10"><img src="/_content/imageslider/10.jpg"></div>
+            <div class="image i11"><img src="/_content/imageslider/11.jpg"></div>
+            <div class="image i12"><img src="/_content/imageslider/12.jpg"></div>
+            <div class="image i13"><img src="/_content/imageslider/communist_logo.png"></div>
         </div>
-      <% }) %>
     </div>
-      </div>
+  </div>
   </div>
 </div>
