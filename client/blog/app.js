@@ -13,7 +13,7 @@
         $locationProvider.html5Mode(true);
 
         // default route
-        $urlRouterProvider.otherwise("/home");
+        $urlRouterProvider.otherwise("/news");
 
         $stateProvider
             .state('home', {
@@ -24,10 +24,10 @@
                 }
             })
             .state('news', {
-                url: '/?:page',
+                url: '/news',
                 templateUrl: function (stateParams) {
                     return window.initialLoad ? null :
-                        '/?xhr=1' + (stateParams.page ? '&page=' + stateParams.page : '');
+                        '/news?xhr=1' + (stateParams.page ? '&page=' + stateParams.page : '');
                 }
             })
             .state('post-details', {

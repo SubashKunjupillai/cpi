@@ -181,11 +181,11 @@ router.use(function (req, res, next) {
 
 // home route
 router.get('/', function (req, res, next) {
-    var vm = req.vm;
-
-    var currentPage = req.query.page || 1;
-    vm.pager = pager(vm.posts.length, currentPage);
-    vm.posts = vm.posts.slice(vm.pager.startIndex, vm.pager.endIndex + 1);
+    // var vm = req.vm;
+    //
+    // var currentPage = req.query.page || 1;
+    // vm.pager = pager(vm.posts.length, currentPage);
+    // vm.posts = vm.posts.slice(vm.pager.startIndex, vm.pager.endIndex + 1);
 
     render('home/index.view.html', req, res);
 });
