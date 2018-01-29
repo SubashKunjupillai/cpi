@@ -107,10 +107,6 @@ router.use(function (req, res, next) {
                     month.postCount += 1;
                 }
             });
-            vm.videoYears.forEach(function (year) {
-            console.log(year.value);
-          });
-
         }
 
     postService.getAll()
