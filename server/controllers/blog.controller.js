@@ -107,6 +107,10 @@ router.use(function (req, res, next) {
                     month.postCount += 1;
                 }
             });
+            vm.videoYears.forEach(function (year) {
+            console.log(year.value);
+          });
+
         }
 
     postService.getAll()
@@ -184,6 +188,17 @@ router.get('/', function (req, res, next) {
     vm.posts = vm.posts.slice(vm.pager.startIndex, vm.pager.endIndex + 1);
 
     render('home/index.view.html', req, res);
+});
+
+// news route
+router.get('/news', function (req, res, next) {
+    var vm = req.vm;
+
+    var currentPage = req.query.page || 1;
+    vm.pager = pager(vm.posts.length, currentPage);
+    vm.posts = vm.posts.slice(vm.pager.startIndex, vm.pager.endIndex + 1);
+
+    render('news/index.view.html', req, res);
 });
 
 // post by id route (permalink used by disqus comments plugin)

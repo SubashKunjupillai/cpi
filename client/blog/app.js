@@ -13,10 +13,17 @@
         $locationProvider.html5Mode(true);
 
         // default route
-        $urlRouterProvider.otherwise("/");
+        $urlRouterProvider.otherwise("/home");
 
         $stateProvider
             .state('home', {
+                url: '/?:page',
+                templateUrl: function (stateParams) {
+                    return window.initialLoad ? null :
+                        '/?xhr=1' + (stateParams.page ? '&page=' + stateParams.page : '');
+                }
+            })
+            .state('news', {
                 url: '/?:page',
                 templateUrl: function (stateParams) {
                     return window.initialLoad ? null :

@@ -1,1 +1,25 @@
-﻿<%- include('../_partials/post-list.html') %>
+<link rel='stylesheet' href="imageslider.css">
+<div class="page-details">
+  <div class="container">
+    <h1>Videos</h1>
+  <div class="row">
+    <!-- <div class="container-fluid"> -->
+      <div class="col-sm-1">
+        <p><b> Years </p>
+        <% videoYears.forEach(function(year) { %>
+          <p><%= year.value %></p>
+        <% }) %>
+      </div>
+      <div class="col-sm-11">
+        <div class="row">
+      <% videos.forEach(function(video) { %>
+        <div class="col-sm-6">
+          <h4><%= video.title %></h4>
+          <iframe width="400" height="250" ng-src="<%= video.displayUrl %>" frameborder="0" allowfullscreen></iframe>
+          <p><%= video.publishDateFormatted %> : <%= video.description %></p>
+        </div>
+      <% }) %>
+    </div>
+      </div>
+  </div>
+</div>
