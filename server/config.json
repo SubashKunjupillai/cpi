@@ -1,1 +1,1 @@
-{"connectionString":"mongodb://localhost:27017/cpi","secret":"REPLACE THIS WITH YOUR OWN SECRET, IT CAN BE ANY STRING","contactEmail":"REPLACE THIS WITH YOUR EMAIL ADDRESS","googleAnalyticsAccount":"UA-XXXXXXXX-X","installed":true}
+{"connectionString":"mongodb://localhost:27017/cpi","secret":"REPLACE THIS WITH YOUR OWN SECRET, IT CAN BE ANY STRING","contactEmail":"subashk1988@yahoo.com","googleAnalyticsAccount":"UA-XXXXXXXX-X","installed":true}

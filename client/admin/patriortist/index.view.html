@@ -1,0 +1,29 @@
+﻿<div class="patriortist-index">
+    <div class="index-header">
+        <h1>Incoming Member Registration</h1>
+        <!-- <div class="buttons">
+            <a href="#/patriortist/add" class="btn btn-default">
+                <i class="glyphicon glyphicon-plus"></i> Add Party Member
+            </a>
+        </div> -->
+    </div>
+    <table class="patriortist-table table table-striped">
+        <tr>
+            <th>Name</th>
+            <th>E-Mail</th>
+            <th>Mobile Number</th>
+            <th>Status</th>
+            <th></th>
+        </tr>
+        <tr ng-repeat="patriortist in vm.patriortists">
+            <td>{{patriortist.name}}</td>
+            <td>{{patriortist.email}}</td>
+            <td>{{patriortist.mobile}}</td>
+            <td>{{patriortist.status}}</td>
+            <td class="text-center"><i ng-if="post.publish" class="glyphicon glyphicon-ok" /></td>
+            <td class="action-icons">
+                <a href="#/patriortist/edit/{{patriortist._id}}" class="btn btn-default"><i class="glyphicon glyphicon-pencil"></i></a>
+            </td>
+        </tr>
+    </table>
+</div>

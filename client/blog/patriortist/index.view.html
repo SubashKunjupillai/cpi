@@ -1,0 +1,30 @@
+<div class="patriortists-add-edit">
+    <h1>Patriortist Details</h1>
+    <div class="row">
+        <div class="col-sm-6">
+          <form>
+              <div class="form-group">
+                  <label for="title">Name</label>
+                  <input type="text" id="name" class="form-control" ng-model="vm.patriortist.name" required/>
+              </div>
+              <div class="form-group">
+                  <label for="slug">E-Mail</label>
+                  <input type="text" id="E-mail" class="form-control" ng-model="vm.patriortist.email" required/>
+              </div>
+              <div class="form-group">
+                  <label for="mobile">Mobile Number</label>
+                  <input id="mobile" class="form-control" ng-model="vm.patriortist.mobile" required/>
+              </div>
+              <div class="form-group">
+                  <label for="address">Address</label>
+                  <textarea class="form-control" ng-model="vm.patriortist.address" required></textarea>
+              </div>
+              
+              <div class="form-group">
+                  <a class="btn btn-primary" ng-click="vm.savePatriortist()">Submit</a>
+                  <!-- <a class="btn btn-default" href="#/patriortists">Cancel</a> -->
+              </div>
+          </form>
+        </div>
+      </div>
+</div>

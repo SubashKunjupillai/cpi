@@ -3,7 +3,7 @@
         <h1>Patriortist Details</h1>
         <div class="row">
             <div class="col-sm-6">
-                <form name="f" ng-submit="f.$valid && vm.submit()" novalidate>
+                <form name="f">
                     <div class="form-group" ng-class="{ 'has-error': f.$submitted && f.name.$invalid }">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" class="form-control" ng-model="vm.name" required />
@@ -23,20 +23,20 @@
                     <div class="form-group" ng-class="{ 'has-error': f.$submitted && f.mobile.$invalid }">
                         <label for="mobile">Mobile Number</label>
                         <input type="text" id="mobile" name="mobile" class="form-control" ng-model="vm.mobile" required />
-                        <div ng-messages="f.$submitted && f.subject.$error" class="help-block ng-cloak">
+                        <div ng-messages="f.$submitted && f.mobile.$error" class="help-block ng-cloak">
                             <div ng-message="required">Mobile number is required</div>
                         </div>
                     </div>
                     <div class="form-group" ng-class="{ 'has-error': f.$submitted && f.address.$invalid }">
                         <label for="address">Address</label>
                         <textarea id="address" name="address" class="form-control" ng-model="vm.address" required></textarea>
-                        <div ng-messages="f.$submitted && f.message.$error" class="help-block ng-cloak">
+                        <div ng-messages="f.$submitted && f.address.$error" class="help-block ng-cloak">
                             <div ng-message="required">Address is required</div>
                         </div>
                     </div>
                     <div class="form-group">
-                        <button ng-disabled="vm.loading" class="btn btn-primary">Submit</button>
-                        <img ng-if="vm.loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+                        <!-- <button class="btn btn-primary">Submit</button> -->
+                        <a class="btn btn-primary" ng-click="vm.submit()">Save</a>
                     </div>
                 </form>
                 <div ng-if="vm.error" class="alert alert-danger ng-cloak">{{vm.error}}</div>

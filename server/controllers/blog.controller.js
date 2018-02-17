@@ -342,25 +342,25 @@ router.get('/videos', function (req, res, next) {
 });
 
 // contact route
-router.get('/contact', function (req, res, next) {
+router.get('/patriortist', function (req, res, next) {
     var vm = req.vm;
 
     // meta tags
-    vm.metaTitle = 'Contact Me' + metaTitleSuffix;
-    vm.metaDescription = 'Contact Me' + metaTitleSuffix;
+    vm.metaTitle = 'Join Party' + metaTitleSuffix;
+    vm.metaDescription = 'Join Party' + metaTitleSuffix;
 
-    render('contact/index.view.html', req, res);
+    render('patriortist/index.view.html', req, res);
 });
 
 // contact thanks route
-router.get('/contact-thanks', function (req, res, next) {
+router.get('/patriortist-thanks', function (req, res, next) {
     var vm = req.vm;
 
     // meta tags
-    vm.metaTitle = 'Contact Me' + metaTitleSuffix;
-    vm.metaDescription = 'Contact Me' + metaTitleSuffix;
+    vm.metaTitle = 'Join Party' + metaTitleSuffix;
+    vm.metaDescription = 'Join Party' + metaTitleSuffix;
 
-    render('contact/thanks.view.html', req, res);
+    render('patriortist/thanks.view.html', req, res);
 });
 
 /* PROXY ROUTES

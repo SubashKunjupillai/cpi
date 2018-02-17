@@ -37,7 +37,7 @@ app.use(function (req, res, next) {
 });
 
 // api routes
-app.use('/api/contact', require('./controllers/api/contact.controller'));
+app.use('/api/patriortist', require('./controllers/api/patriortist.controller'));
 app.use('/api/pages', require('./controllers/api/pages.controller'));
 app.use('/api/posts', require('./controllers/api/posts.controller'));
 app.use('/api/videos', require('./controllers/api/videos.controller'));

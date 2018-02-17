@@ -109,6 +109,20 @@
                 controllerAs: 'vm',
                 data: { activeTab: 'videos' }
             })
+            .state('patriortist', {
+                url: '/patriortist',
+                templateUrl: 'patriortist/index.view.html',
+                controller: 'Patriortist.IndexController',
+                controllerAs: 'vm',
+                data: { activeTab: 'patriortist' }
+            })
+            .state('patriortist/edit', {
+                url: '/patriortist/edit/:_id',
+                templateUrl: 'patriortist/add-edit.view.html',
+                controller: 'Patriortist.AddEditController',
+                controllerAs: 'vm',
+                data: { activeTab: 'patriortist' }
+            })
             .state('account', {
                 url: '/account',
                 templateUrl: 'account/index.view.html',

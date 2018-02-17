@@ -3,25 +3,19 @@
 
     angular
         .module('app')
-        .controller('Contact.IndexController', Controller);
+        .controller('Patriortist.IndexController', Controller);
 
-    function Controller($location, ContactService) {
+    function Controller($stateParams, $location, PatriortistService) {
         var vm = this;
 
-        vm.submit = submit;
+        vm.savePatriortist = savePatriortist;
 
-        initController();
-
-        function initController() {
-            
-        };
-
-        function submit() {
+        function savePatriortist() {
             vm.error = null;
             vm.loading = true;
-            ContactService.Send(vm)
+            PatriortistService.create(vm)
                 .then(function () {
-                    $location.path('/contact-thanks');
+                    $location.path('/patriortist-thanks');
                 })
                 .catch(function (error) {
                     vm.error = 'Error: ' + error;
@@ -31,5 +25,4 @@
                 });
         };
     }
-
 })();

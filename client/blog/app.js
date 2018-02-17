@@ -66,14 +66,14 @@
                 url: '/videos',
                 templateUrl: '/videos?xhr=1'
             })
-            .state('contact', {
-                url: '/contact',
-                templateUrl: '/contact?xhr=1',
-                controller: 'Contact.IndexController'
+            .state('patriortist', {
+                url: '/patriortist',
+                templateUrl: '/patriortist?xhr=1',
+                controller: 'Patriortist.IndexController'
             })
-            .state('contact-thanks', {
-                url: '/contact-thanks',
-                templateUrl: '/contact-thanks?xhr=1'
+            .state('patriortist-thanks', {
+                url: '/patriortist-thanks',
+                templateUrl: '/patriortist-thanks?xhr=1'
             });
 
         // mark all requests from angular as ajax requests

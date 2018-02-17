@@ -3,7 +3,7 @@
 
     angular
         .module('app')
-        .factory('ContactService', Service);
+        .factory('PatriortistService', Service);
 
     function Service($http, $q) {
         var service = {};
@@ -13,7 +13,8 @@
         return service;
 
         function Send(form) {
-            return $http.post('/api/contact', form).then(handleSuccess, handleError);
+          console.log("send");
+          return $http.post('/api/patriortist', form).then(handleSuccess, handleError);
         }
 
         // private functions
